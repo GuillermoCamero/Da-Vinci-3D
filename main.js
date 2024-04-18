@@ -49,7 +49,7 @@ controls.mouseButtons = {
 const loader = new GLTFLoader();
 
 loader.load(
-  "models/espiral_aerea.glb",
+  "models/aliante.glb",
   function (gltf) {
     const model = gltf.scene;
     model.position.set(0, 1, 0);
