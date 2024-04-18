@@ -1,0 +1,17 @@
+{
+  "name": "da_vinci_room_ok",
+  "version": "0.0.1",
+  "description": "Project meant to showcase the Da Vinci's models the Ing. Eduardo Latzina Museum has",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Gabriel Andrade and Guillermo Camero",
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.163.0"
+  },
+  "devDependencies": {
+    "vite": "^5.2.9"
+  }
+}
