@@ -1,7 +1,5 @@
 import * as THREE from "three";
 
-import Stats from "three/addons/libs/stats.module.js";
-
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 
@@ -13,9 +11,6 @@ let mixer;
 const clock = new THREE.Clock();
 
 const container = document.getElementById("container3d");
-
-const stats = new Stats();
-container.appendChild(stats.dom);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -93,8 +88,6 @@ function animate() {
   mixer.update(delta);
 
   controls.update();
-
-  stats.update();
 
   renderer.render(scene, camera);
 }
