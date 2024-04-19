@@ -57,7 +57,7 @@ dracoLoader.setDecoderPath('/examples/jsm/libs/draco/');
 loader.setDRACOLoader(dracoLoader);
 
 loader.load(
-  "models/aliante.glb",
+  "models/espiral_aerea.glb",
   function (gltf) {
     const model = gltf.scene;
     model.position.set(0, 1, 0);
