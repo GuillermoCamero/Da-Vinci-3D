@@ -67,7 +67,7 @@ loader.load(
     mixer = new THREE.AnimationMixer(model);
 
     if (gltf.animations.length) {
-      mixer.clipAction(gltf?.animations[0]).play();
+      mixer.clipAction(gltf.animations[0]).play();
     }
 
     animate();
