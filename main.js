@@ -6,8 +6,12 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/examples/jsm/Addons.js";
+
+let mixer;
 
 const clock = new THREE.Clock();
+
 const container = document.getElementById("container3d");
 
 const stats = new Stats();
@@ -21,7 +25,7 @@ container.appendChild(renderer.domElement);
 const pmremGenerator = new THREE.PMREMGenerator(renderer);
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xbfe3dd);
+scene.background = new THREE.Color(0xbee9e4);
 scene.environment = pmremGenerator.fromScene(
   new RoomEnvironment(renderer),
   0.04
@@ -48,6 +52,10 @@ controls.mouseButtons = {
 
 const loader = new GLTFLoader();
 
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath('/examples/jsm/libs/draco/');
+loader.setDRACOLoader(dracoLoader);
+
 loader.load(
   "models/aliante.glb",
   function (gltf) {
@@ -55,6 +63,12 @@ loader.load(
     model.position.set(0, 1, 0);
     model.scale.set(0.01, 0.01, 0.01);
     scene.add(model);
+
+    mixer = new THREE.AnimationMixer(model);
+
+    if (gltf.animations.length) {
+      mixer.clipAction(gltf?.animations[0]).play();
+    }
 
     animate();
   },
@@ -73,6 +87,10 @@ window.onresize = function () {
 
 function animate() {
   requestAnimationFrame(animate);
+
+  const delta = clock.getDelta();
+
+  mixer.update(delta);
 
   controls.update();
 
