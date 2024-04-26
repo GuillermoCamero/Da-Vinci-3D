@@ -1,0 +1,3 @@
+# Jekyll Main Configuration File
+destination: src
+exclude: [.sass-cache/, .jekyll-cache/, gemfiles/, Gemfile, Gemfile.lock, node_modules/, vendor/bundle/, vendor/cache/, vendor/gems/, vendor/ruby/, dist/, public/, package-lock.json, package.json, vite.config.js]
