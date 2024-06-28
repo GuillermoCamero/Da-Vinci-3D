@@ -4,7 +4,8 @@
   "description": "Project meant to showcase the Da Vinci's models the Ing. Eduardo Latzina Museum has",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "build": "npx vite build",
+    "preview": "jekyll b && npx vite build && npx vite preview"
   },
   "author": "Gabriel Andrade and Guillermo Camero",
   "license": "ISC",

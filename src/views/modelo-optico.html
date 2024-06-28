@@ -5,7 +5,7 @@
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <link rel="stylesheet" href="/assets/styles/main.css">
-       <title>DA VINCI 3D | {{ page.model_title }}</title>
+       <title>DA VINCI 3D | Modelo Óptico</title>
 </head>
 
 <body>
@@ -314,14 +314,33 @@
               </div>
               <div id="model-details">
                      <header id="details-header">
-                            <h2>{{ page.model_title }}</h2>
+                            <h2>Modelo Óptico</h2>
                      </header>
-                     <p>{{page.model_description}}</p>
+                     <p>Con este dispositivo, Leonardo explicó el funcionamiento del ojo humano y los problemas ópticos del mismo</p>
               </div>
               </main>
               <script type="module" src="/scripts/fullscreen.js"></script>
               <script type="module" src="/scripts/sidebar-show.js"></script>
 </body>
-{{ content }}
+<script type="module">
+       import {loader, scene, animate} from "../../public/scripts/model.js"
+
+       loader.load(
+              "/models/modelo_optico.glb",
+              function (gltf) {
+                     const model = gltf.scene;
+                     model.position.set(0, 0, 0);
+                     model.scale.set(0.01, 0.01, 0.01);
+                     scene.add(model);
+                     animate();
+              },
+              undefined,
+              function (e) {
+                     console.error(e);
+              }
+       );              
+</script>
+
+
 
 </html>

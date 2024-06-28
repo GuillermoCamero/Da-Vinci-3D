@@ -1,0 +1,248 @@
+*,
+*::before,
+*::after {
+       box-sizing: border-box;
+}
+
+* {
+       margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+       display: block;
+       max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+       font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+       overflow-wrap: break-word;
+}
+
+html,
+body {
+       height: 100%;
+       width: 100%;
+}
+
+body {
+       line-height: 1.5;
+       --webkit-font-smoothing: antialiased;
+       overflow-y: hidden;
+       margin: 0;
+       padding: 0;
+       background-color: #2c2c2c;
+       display: flex;
+       flex-direction: column;
+       flex: 1 1 0px;
+       color: #f5f5f7;
+       font-family: Arial, Helvetica, sans-serif;
+       scrollbar-color: #666666 transparent;
+}
+
+#top-navigation {
+       background-color: #2c2c2c;
+       height: 50px;
+       padding: 5px 16px;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       border-bottom: 1px solid rgba(242, 242, 242, .25);
+}
+
+#main-logo {
+       display: flex;
+       align-items: center;
+       width: 90px;
+}
+
+#svg-desktop-logo {
+       width: 150px;
+}
+
+#svg-mobile-logo {
+       height: 100%;
+}
+
+#desktop-logo {
+       display: flex;
+       align-items: center;
+}
+
+#mobile-logo {
+       display: none;
+       height: 40px;
+}
+
+#top-navigation-center {
+       display: flex;
+       justify-content: center;
+}
+
+#top-navigation-end {
+       display: flex;
+       justify-content: end;
+}
+
+.sidebar-toggle-btn {
+       background: transparent;
+       border: none;
+       background-color: #4A4A47;
+       border-color: transparent;
+       border-radius: 50%;
+       padding: 5px;
+       outline: none;
+       cursor: pointer;
+       display: none;
+}
+
+#side-top-nav {
+       display: none;
+       height: 50px;
+       padding: 5px 16px;
+}
+
+#top-navigation-start,
+#top-navigation-center,
+#top-navigation-end {
+       width: 100%;
+}
+
+
+#main-wrapper {
+       display: flex;
+       flex: 1 1 auto;
+       margin: 0 auto;
+       justify-content: center;
+       max-width: 1366px;
+       width: 100%;
+       max-height: 90%;
+       min-width: 0;
+}
+
+#side-navigation {
+       background-color: #2c2c2c;
+       height: 100%;
+       width: 250px;
+       overflow-y: hidden;
+       min-width: 0;
+}
+
+#side-content {
+       padding: 0 16px;
+       overflow-y: scroll;
+}
+
+.subheader-text {
+       font-weight: 600;
+       font-size: 18px;
+       margin: 10px 0;
+}
+
+#details-header {
+       margin: 10px 0;
+}
+
+#viewer {
+       height: 100%;
+       min-width: 0;
+       flex: 1;
+       position: relative;
+}
+
+#model-details {
+       width: 250px;
+       padding: 0 16px;
+       overflow-y: scroll;
+       min-width: 0;
+}
+
+.fullscreen-toggle {
+       position: absolute;
+       bottom: 20px;
+       right: 20px;
+       background-color: #EA0B22;
+       border-color: transparent;
+       border-radius: 50%;
+       padding: 5px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       outline: none;
+       cursor: pointer;
+}
+
+#webgl-canvas {
+       height: 100%;
+       width: 100%;
+}
+
+@media only screen and (max-width: 930px) {
+
+       #desktop-logo {
+              display: none;
+       }
+
+       #mobile-logo {
+              display: block;
+       }
+
+       #main-wrapper {
+              flex-direction: column;
+              background-color: #191919;
+              width: 100%;
+       }
+
+       .sidebar-toggle-btn {
+              display: block;
+       }
+
+       #side-navigation {
+              display: none;
+              height: 100vh;
+              width: 100vw;
+              position: absolute;
+              top: 0;
+              right: 0;
+              z-index: 999;
+       }
+
+       #side-top-nav {
+              display: flex;
+              align-items: center;
+              justify-content: end;
+       }
+
+       #model-details {
+              width: 100%;
+              height: 30%;
+              background-color: #2c2c2c;
+              padding: 20px;
+              border-top-left-radius: 26px;
+              border-top-right-radius: 26px;
+       }
+
+       #viewer {
+              flex: 1;
+              max-height: 70%;
+       }
+
+       #webgl-canvas {
+              min-height: 100%;
+       }
+}
