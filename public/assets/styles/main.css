@@ -294,6 +294,7 @@ body {
 
        #side-content {
               margin: 20px 20px;
+              overflow-y: scroll;
        }
 
        #side-top-nav {
