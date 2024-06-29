@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx vite build",
-    "preview": "jekyll b && npx vite build && npx vite preview"
+    "preview": "jekyll b && npx vite build && npx vite preview --host"
   },
   "author": "Gabriel Andrade and Guillermo Camero",
   "license": "ISC",

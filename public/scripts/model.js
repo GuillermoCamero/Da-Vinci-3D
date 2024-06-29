@@ -21,7 +21,7 @@ export const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x191919);
 scene.environment = pmremGenerator.fromScene(new RoomEnvironment(scene)).texture;
 
-const camera = new THREE.PerspectiveCamera(
+export const camera = new THREE.PerspectiveCamera(
        50,
        viewer.offsetWidth / viewer.offsetHeight,
        0.1,
@@ -40,11 +40,16 @@ controls.mouseButtons = {
        RIGHT: THREE.MOUSE.PAN,
 };
 
+const loadingManager = new THREE.LoadingManager(() => {
+       const loadingScreen = document.getElementById('loader');
+       loadingScreen.style.display = "none";
+});
+
 const dracoLoader = new DRACOLoader();
 dracoLoader.setDecoderPath("/lib/draco/gltf/");
 dracoLoader.preload();
 
-export const loader = new GLTFLoader();
+export const loader = new GLTFLoader(loadingManager);
 loader.setDRACOLoader(dracoLoader);
 
 export function animate() {

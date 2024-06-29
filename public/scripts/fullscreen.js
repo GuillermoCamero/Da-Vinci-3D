@@ -41,7 +41,7 @@ function toggleFullscreen(elementToFullscreen) {
        }
 }
 
-const viewerFullscreenToggle = document.getElementById("viewer-toggle-fullscreen");
+const viewerFullscreenToggle = document.getElementById("viewer-fs-toggle");
 viewerFullscreenToggle.addEventListener("click", () => {
        toggleFullscreen(viewerElem);
 }, false);

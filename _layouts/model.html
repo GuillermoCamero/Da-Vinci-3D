@@ -5,6 +5,15 @@
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <link rel="stylesheet" href="/assets/styles/main.css">
+       <link rel="apple-touch-icon" sizes="180x180" href="/assets/media/logos/apple-touch-icon.png">
+       <link rel="icon" type="image/png" sizes="32x32" href="/assets/media/logos/favicon-32x32.png">
+       <link rel="icon" type="image/png" sizes="16x16" href="/assets/media/logos/favicon-16x16.png">
+       <link rel="manifest" href="/assets/media/logos/site.webmanifest">
+       <link rel="mask-icon" href="/assets/media/logos/safari-pinned-tab.svg" color="#5bbad5">
+       <link rel="shortcut icon" href="/assets/media/logos/favicon.ico">
+       <meta name="msapplication-TileColor" content="#da532c">
+       <meta name="msapplication-config" content="/assets/media/logos/browserconfig.xml">
+       <meta name="theme-color" content="#ffffff">
        <title>DA VINCI 3D | {{ page.model_title }}</title>
 </head>
 
@@ -15,7 +24,7 @@
                             <svg id="svg-desktop-logo" role="img" xmlns="http://www.w3.org/2000/svg"
                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 404 121.8"
                                    style="enable-background:new 0 0 404 121.8;" xml:space="preserve">
-                                   <title>Escuela Tecnica Otto Krause</title>
+                                   <title>Escuela Técnica Otto Krause</title>
                                    <style type="text/css">
                                           .st0 {
                                                  fill: url(#SVGID_1_);
@@ -161,7 +170,7 @@
                                    viewBox="5.252 10.116279069767442 114.73599999999999 108.85116279069767" y="0px"
                                    x="0px" xmlns:xlink="http://www.w3.org/1999/xlink"
                                    xmlns="http://www.w3.org/2000/svg">
-                                   <title>Escuela Tecnica Otto Krause</title>
+                                   <title>Escuela Técnica Otto Krause</title>
                                    <style type="text/css">
                                           .st0 {
                                                  fill: #C51A1B;
@@ -269,15 +278,15 @@
                             </svg></a>
               </div>
               <div id="top-navigation-center">
-                     <a href="/">
+                     <a href="#">
                             <img id="main-logo" alt="Página principal de Da Vinci 125"
                                    src="/assets/media/logos/dv125.png">
                      </a>
               </div>
               <div id="top-navigation-end">
                      <button id="sidebar-open" class="sidebar-toggle-btn" title="Abrir la barra de navegacion">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px"
-                                   fill="#e8eaed">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"
+                                   class="button-icon">
                                    <path
                                           d="M440-183v-274L200-596v274l240 139Zm80 0 240-139v-274L520-457v274Zm-40-343 237-137-237-137-237 137 237 137ZM160-252q-19-11-29.5-29T120-321v-318q0-22 10.5-40t29.5-29l280-161q19-11 40-11t40 11l280 161q19 11 29.5 29t10.5 40v318q0 22-10.5 40T800-252L520-91q-19 11-40 11t-40-11L160-252Zm320-228Z" />
                             </svg>
@@ -289,8 +298,8 @@
                      <nav>
                             <div id="side-top-nav" title="Cerrar la barra de navegacion">
                                    <button id="sidebar-close" class="sidebar-toggle-btn">
-                                          <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960"
-                                                 width="28px" fill="#e8eaed">
+                                          <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960"
+                                                 width="32px" class="button-icon">
                                                  <path
                                                         d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                                           </svg>
@@ -298,19 +307,29 @@
                             </div>
                             <div id="side-content">
                                    <h2 class="subheader-text">Modelos 3D</h2>
+                                   <ul id="side-nav-links">
+                                          {%for page in site.html_pages%}
+                                          <li class="side-nav-link"><a class="smooth-color-transition"
+                                                        href="..{{page.url}}">{{page.model_title}}</a></li>
+                                          {%endfor%}
+                                   </ul>
                             </div>
                      </nav>
               </div>
               <div id="viewer">
                      <canvas id="webgl-canvas"></canvas>
-                     <button class="fullscreen-toggle" title="Ver en pantalla completa"
-                            aria-label="Ver en pantalla completa" id="viewer-toggle-fullscreen">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="fullscreen-toggle-icon" height="24px"
-                                   viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                     <button id="viewer-fs-toggle" class="fullscreen-toggle" title="Ver en pantalla completa"
+                            aria-label="Ver en pantalla completa">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="fullscreen-toggle-icon button-icon"
+                                   height="24px" viewBox="0 -960 960 960" width="24px">
                                    <path
                                           d="M120-120v-320h80v184l504-504H520v-80h320v320h-80v-184L256-200h184v80H120Z" />
                             </svg>
                      </button>
+                     <div id="no-model-err">
+                            <p>El modelo seleccionado no está disponible en este momento, ¡pero pronto lo estará!</p>
+                     </div>
+                     <div id="loader"></div>
               </div>
               <div id="model-details">
                      <header id="details-header">
