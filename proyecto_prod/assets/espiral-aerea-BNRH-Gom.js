@@ -1,0 +1,1 @@
+import{l as o,c as a,s as r,a as n,b as i}from"./error-LcDvIVM3.js";import"./three-9tRf44nr.js";o.load("./models/espiral_aerea.glb",function(e){const s=e.scene;s.position.set(0,-1,0),s.scale.set(1,1,1),a.position.set(7,4,2),r.add(s),n()},void 0,function(e){i(),console.error(e)});

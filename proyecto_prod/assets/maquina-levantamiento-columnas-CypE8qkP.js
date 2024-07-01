@@ -1,0 +1,1 @@
+import{l as o,c as a,s as n,a as r,b as t}from"./error-LcDvIVM3.js";import"./three-9tRf44nr.js";o.load("./models/levanta_columnas.glb",function(e){const s=e.scene;s.position.set(0,-1,0),s.scale.set(5,5,5),a.position.set(12,9,10),n.add(s),r()},void 0,function(e){t(),console.error(e)});

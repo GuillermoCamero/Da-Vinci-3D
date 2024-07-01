@@ -1,0 +1,1 @@
+import{l as o,c as a,s as n,a as r,b as t}from"./error-LcDvIVM3.js";import"./three-9tRf44nr.js";o.load("./models/puente.glb",function(e){const s=e.scene;s.position.set(0,0,0),s.scale.set(10,10,10),a.position.set(10,7,0),n.add(s),r()},void 0,function(e){t(),console.error(e)});

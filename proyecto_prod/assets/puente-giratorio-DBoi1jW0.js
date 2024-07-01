@@ -1,0 +1,1 @@
+import{l as s,c as a,s as n,a as r,b as i}from"./error-LcDvIVM3.js";import"./three-9tRf44nr.js";s.load("./models/puente_giratorio.glb",function(e){const o=e.scene;o.position.set(2,0,0),o.scale.set(2.5,2.5,2.5),a.position.set(20,7,0),n.add(o),r()},void 0,function(e){i(),console.error(e)});

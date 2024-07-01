@@ -1,0 +1,1 @@
+import{l as s,s as a,a as n,b as r}from"./error-LcDvIVM3.js";import"./three-9tRf44nr.js";s.load("./models/modelo_optico.glb",function(o){const e=o.scene;e.position.set(0,0,0),e.scale.set(.01,.01,.01),a.add(e),n()},void 0,function(o){r(),console.error(o)});

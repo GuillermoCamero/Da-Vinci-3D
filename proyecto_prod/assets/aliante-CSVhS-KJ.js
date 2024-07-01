@@ -1,0 +1,1 @@
+import{l as o,c as a,s as n,a as i,b as r}from"./error-LcDvIVM3.js";import"./three-9tRf44nr.js";o.load("./models/aliante.glb",function(e){const s=e.scene;s.position.set(0,0,0),s.scale.set(.01,.01,.01),a.position.set(5,0,6),n.add(s),i()},void 0,function(e){r(),console.error(e)});

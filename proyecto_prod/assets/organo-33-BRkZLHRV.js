@@ -1,0 +1,1 @@
+import{l as o,c as a,s as n,a as r,b as i}from"./error-LcDvIVM3.js";import"./three-9tRf44nr.js";o.load("./models/***.glb",function(e){const s=e.scene;s.position.set(0,0,0),s.scale.set(.01,.01,.01),a.position.set(5,0,6),n.add(s),r()},void 0,function(e){i(),console.error(e)});

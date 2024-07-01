@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>DA VINCI 3D | Espiral Aérea</title>
+  <script type="module" crossorigin src="./assets/espiral-aerea-BNRH-Gom.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/three-9tRf44nr.js">
+  <link rel="modulepreload" crossorigin href="./assets/error-LcDvIVM3.js">
+  <link rel="stylesheet" crossorigin href="./assets/error-CfNHvKLf.css">
+</head>
+
+<body>
+       <nav id="top-navigation">
+              <button id="sidebar-open" class="sidebar-toggle-btn" title="Abrir la barra de navegacion">
+                     <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"
+                            class="button-icon">
+                            <path
+                                   d="M440-183v-274L200-596v274l240 139Zm80 0 240-139v-274L520-457v274Zm-40-343 237-137-237-137-237 137 237 137ZM160-252q-19-11-29.5-29T120-321v-318q0-22 10.5-40t29.5-29l280-161q19-11 40-11t40 11l280 161q19 11 29.5 29t10.5 40v318q0 22-10.5 40T800-252L520-91q-19 11-40 11t-40-11L160-252Zm320-228Z" />
+                     </svg>
+                     Explorar modelos
+              </button>
+       </nav>
+       <main id="main-wrapper">
+              <div id="side-navigation">
+                     <nav>
+                            <div id="side-top-nav" title="Cerrar la barra de navegacion">
+                                   <button id="sidebar-close" class="sidebar-toggle-btn">
+                                          <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960"
+                                                 width="32px" class="button-icon">
+                                                 <path
+                                                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                                          </svg>
+                                   </button>
+                            </div>
+                            <div id="side-content">
+                                   <h2 class="subheader-text">Modelos 3D</h2>
+                                   <ul id="side-nav-links">
+                                          
+                                          
+                                          <li class="side-nav-link"><a class="smooth-color-transition"
+                                                 href="../model/aliante.html">Aleante con extremidades articuladas</a></li>
+                                          
+                                          
+                                          
+                                          <li class="side-nav-link"><a class="smooth-color-transition"
+                                                 href="../model/bote-propulsion.html">Bote con propulsión a ruedas</a></li>
+                                          
+                                          
+                                          
+                                          <li class="side-nav-link"><a class="smooth-color-transition"
+                                                 href="../model/espejos-concavos.html">Molienda de espejos cóncavos</a></li>
+                                          
+                                          
+                                          
+                                          <li class="side-nav-link"><a class="smooth-color-transition active-link"
+                                                        href="../model/espiral-aerea.html">Espiral Aérea</a></li>
+                                          
+                                          
+                                          
+                                          <li class="side-nav-link"><a class="smooth-color-transition"
+                                                 href="../model/horno.html">Horno a llama dirigida</a></li>
+                                          
+                                          
+                                          
+                                          <li class="side-nav-link"><a class="smooth-color-transition"
+                                                 href="../model/maquina-levantamiento-columnas.html">Máquina para el levantamiento de columnas</a></li>
+                                          
+                                          
+                                          
+                                          <li class="side-nav-link"><a class="smooth-color-transition"
+                                                 href="../model/optico.html">Modelo Óptico</a></li>
+                                          
+                                          
+                                          
+                                          <li class="side-nav-link"><a class="smooth-color-transition"
+                                                 href="../model/organo-33.html">Mortero con 33 cañones</a></li>
+                                          
+                                          
+                                          
+                                          <li class="side-nav-link"><a class="smooth-color-transition"
+                                                 href="../model/puente-galata.html">Puente de Gálata</a></li>
+                                          
+                                          
+                                          
+                                          <li class="side-nav-link"><a class="smooth-color-transition"
+                                                 href="../model/puente-giratorio.html">Puente giratorio con perfil parabólico</a></li>
+                                          
+                                          
+                                          
+                                          <li class="side-nav-link"><a class="smooth-color-transition"
+                                                 href="../model/transformacion-movimiento.html">Máquina para transformar un movimiento alterado en uno continuo</a></li>
+                                          
+                                          
+                                   </ul>
+                            </div>
+                     </nav>
+              </div>
+              <div id="viewer">
+                     <canvas id="webgl-canvas"></canvas>
+                     <button id="viewer-fs-toggle" class="fullscreen-toggle" title="Ver en pantalla completa"
+                            aria-label="Ver en pantalla completa">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="fullscreen-toggle-icon button-icon"
+                                   height="24px" viewBox="0 -960 960 960" width="24px">
+                                   <path
+                                          d="M120-120v-320h80v184l504-504H520v-80h320v320h-80v-184L256-200h184v80H120Z" />
+                            </svg>
+                     </button>
+                     <div id="no-model-err">
+                            <p>El modelo seleccionado no está disponible en este momento, ¡pero pronto lo estará!</p>
+                     </div>
+                     <div id="loader"></div>
+              </div>
+              <div id="model-details">
+                     <header id="details-header">
+                            <h2>Espiral Aérea</h2>
+                     </header>
+                     <p>Este instrumento hecho a espiral es considerado por muchos el predecesor del moderno helicóptero. Leonardo dice que dado vuelta con presteza, se hace la hembra en el aire y subirá a lo alto. Cuatro hombres hubieran debido apoyar los pies en la plataforma central y, haciendo fuerza con las manos sobre las barras respectivas, hacer volar el árbol con su hélice de 10 metros de diámetro.
+Cod. B. F. 83 v. </p>
+              </div>
+       </main>
+</body>
+
+
+
+</html>

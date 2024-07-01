@@ -1,0 +1,1 @@
+import{l as e,c as a,s as n,a as i,b as r}from"./error-LcDvIVM3.js";import"./three-9tRf44nr.js";e.load("./models/maquina_vidrios_concavos.glb",function(o){const s=o.scene;s.position.set(0,0,0),s.scale.set(.01,.01,.01),a.position.set(2,1,4),n.add(s),i()},void 0,function(o){r(),console.error(o)});

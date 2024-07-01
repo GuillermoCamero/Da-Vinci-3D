@@ -1,0 +1,1 @@
+import{l as s,c as a,s as n,a as r,b as i}from"./error-LcDvIVM3.js";import"./three-9tRf44nr.js";s.load("./models/barco.glb",function(e){const o=e.scene;o.position.set(0,0,0),o.scale.set(.05,.05,.05),a.position.set(7,4,0),n.add(o),r()},void 0,function(e){i(),console.error(e)});
